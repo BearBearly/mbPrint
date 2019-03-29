@@ -1,0 +1,64 @@
+include mixins.pug
+
+.header.m-b-30
+  .wrapper
+    .justify-between
+      .logo.m-b-20
+        img(src="../img/logo.png", alt="logo")  
+        .info Полиграфия европейского уровня за умеренную цену
+      a(href="tel:(499) 943-20-94").phone.m-b-20
+        span (499)
+        | 943-20-94
+    .main-nav 
+      .wrapper
+        .row
+          -
+            var mainMenu = [
+              {
+                title: 'Главная',
+                href: 'index.html'
+              }, 
+              {
+                title: 'Каталог',
+                href: '#'
+              },           
+              {
+                title: 'Услуги',
+                href: 'about.html'
+              }, 
+              {
+                title: 'Производство',
+                href: '#'
+              },     
+              {
+                title: 'Новости',
+                href: '#'
+              },
+              {
+                title: 'Поддержка',
+                href: '#'
+              },            
+              {
+                title: 'Технологии',
+                href: '#'
+              },    
+              {
+                title: 'Контакты',
+                href: 'contacts.html'
+              },         
+            ];
+
+          .main-nav__opener
+            .hamburger
+              span
+              span
+              span
+            .cross
+              span
+              span
+          +makeList(mainMenu)
+          .search
+            form
+              input(type="search" name="search" placeholder="Искать...")
+              button(type="submit")
+            button(type="text")

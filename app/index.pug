@@ -1,0 +1,34 @@
+doctype html
+html(lang="uk")
+  head
+    include includes/head.pug
+  body
+    include includes/header.pug
+
+    .wrapper
+      .row
+        .col.col-desktop-1-4
+          .row
+            .col.col-phablet-1-2  
+              .placeholder.m-b-30
+                .categories
+                  .title.title_main ПРОИЗВОДСТВО
+            .col.col-phablet-1-2  
+              .placeholder.m-b-30
+                .news
+                  .title.title_main Новости
+        .col.col-desktop-3-4
+          .placeholder.m-b-30
+          .row
+            each item in '123456'
+              .col.col-phablet-1-2.col-tablet-1-3
+                .placeholder.service.m-b-30
+                  .title.title_cinnabar
+            -;
+      .row
+        each item in '1234561234'
+          .col.col-desktop-1-4
+            .placeholder.m-b-30
+        -;
+        
+    include includes/footer.pug

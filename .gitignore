@@ -1,0 +1,5 @@
+/node_modules
+/dist
+*.psd
+*.txt
+*.zip

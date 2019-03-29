@@ -1,0 +1,55 @@
+@import "mixins"
+.row
+  margin:
+    left: -15px
+    right: -15px
+  display: flex
+  flex-wrap: wrap
+
+.col
+  padding:
+    left: 15px
+    right: 15px
+  width: 100%
+
+.wrapper
+  @extend .col
+  max-width: 1170px
+  margin: 0 auto
+
+.justify-between
+  padding-top: $gutter+5
+  justify-content: space-between
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+  +breakpoint(tablet)
+    flex-direction: row
+    align-items: flex-end
+
+$v-step: 5
+@for $i from 1 through 6
+  .m-b-#{$i*$v-step}
+    margin-bottom: $i*$v-step*1px
+
+@each $extension in large desktop laptop tablet phablet
+  .col
+    @for $i from 1 through 5
+      +breakpoint($extension) 
+        @for $j from $i+1 through 6
+          @if $i%2==0 and $j%2==0 or $i%3==0 and $j%3==0
+          @else 
+            &-#{$extension}
+              &-#{$i}-#{$j}
+                max-width: percentage($i/$j)
+
+// 12 colums
+// .col-
+//   @each $dim in $dims
+//     &#{$dim}-
+//       +breakpoint($dim)
+//         @for $i from 1 through 12
+//           &#{$i}
+//             max-width: percentage($i/12)
+
+

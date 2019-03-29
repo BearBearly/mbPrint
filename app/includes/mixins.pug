@@ -1,0 +1,47 @@
+mixin makeList(list)
+  ul
+    each item in list
+      li
+        a(href=item.href)=item.title
+          if item.sublevel
+            +makeList(item)
+-;
+
+mixin makePhoneList(contacts)
+  table.contacts
+    each item in contacts
+      tr
+        td.contact__title=item.title
+        td
+          each phone in item.phones
+            p
+              a(href="tel:"+phone).contact__phone=phone
+-;
+  
+mixin makelistMenu(arr)
+  ul
+    each item in arr
+      li
+        a(href="#")=item.title
+        -if(item.sublist)
+          +makelistMenu(item.sublist)
+-;
+
+
+mixin makePost(item)
+  .column.column-phablet-1-3.column-posts
+    a(href="#").post
+      .post__top
+        .post__date=item.date
+        .post__text=item.text
+      .post__img
+        img(src='img/'+item.img alt='')
+-;
+
+mixin makeServices(list)
+  each item in list
+    .col.col-desktop-1-3
+      .placeholder.service.m-b-30
+  -;
+
+                

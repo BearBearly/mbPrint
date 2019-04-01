@@ -1,0 +1,30 @@
+@import "mixins"
+
+*
+  margin: 0
+  padding: 0px
+  box-sizing: border-box
+  transition: all .1s ease
+
+body
+  +propToRem(font-size, 14)
+  +line-height(15,21)
+  display: flex
+  flex-direction: column
+  height: 100vh
+  font-family: 'Myriad Pro', sans-serif
+
+img
+  max-width: 100%
+
+a
+  text-decoration: none
+
+*::placeholder
+  +propToRem(font-size, 18)
+  color: #737272
+  transition: .2s
+
+*:focus
+  &::placeholder
+    color: transparent

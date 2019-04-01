@@ -1,31 +1,7 @@
 @import "vars"
+@import "base"
 @import "grid"
 @import "header"
-
-*
-  margin: 0
-  padding: 0px
-  box-sizing: border-box
-
-body
-  line-height: 1.5
-  font-family: 'Myriad Pro', sans-serif
-  +propToRem(font-size, 14)
-
-img
-  max-width: 100%
-
-a
-  text-decoration: none
-
-*::placeholder
-  +propToRem(font-size, 18)
-  color: #737272
-  transition: .2s
-
-*:focus
-  &::placeholder
-    color: transparent
     
 .placeholder
   background: #009919
@@ -51,6 +27,13 @@ a
     background: rgba(255, 192, 52, 1)
   &.title_wet-asphalt
     background: rgba(84, 84, 84, .83)
+
+.categories
+  +breakpoint(phablet)
+
+
+.news
+  +breakpoint(phablet)
 
 
 

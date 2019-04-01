@@ -1,23 +1,23 @@
+=line-height($fs, $lh)
+  line-height: $lh/$fs
+
 =propToRem($prop, $px)
   #{$prop} : $px*1px
   #{$prop} : $px/16*1rem
 
-=breakpoint($point) 
-  @if $point == large 
-    @media (min-width: 82em)
+=breakpoint($point)
+  @if $point == 'exlarge'
+    @media (min-width: 80rem)
       @content
-  @if $point == desktop 
-    @media (min-width: 70em)
+  @if $point == 'desktop'
+    @media (min-width: 70rem)
       @content
-  @else if $point == laptop 
-    @media (min-width: 64em)
-      @content
-  @else if $point == tablet 
-    @media (min-width: 50em)
-      @content
-  @else if $point == phablet 
-    @media (min-width: 37.5em)
+  @else if $point == 'laptop'
+    @media (min-width: 64rem)
       @content 
-  @else if $point == mobileonly
-    @media (max-width: 37.5em)
+  @else if $point == 'tablet' 
+    @media (min-width: 50rem)
       @content
+  @else if $point == 'phablet'
+    @media (min-width: 37.5rem)
+      @content 

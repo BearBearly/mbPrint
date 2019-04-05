@@ -1,7 +1,45 @@
 .footer
   .wrapper
-    .justify-between
-      .small-placeholder.m-b-30(style="width: 100px")
-      .small-placeholder.m-b-30(style="width: 600px")
+    .justify-between_for-footer
+      .partners.m-b-30
+        img(src="../img/footer-img.png", alt="img")
+      .footer-nav.m-b-30
+        -
+          var mainMenu = [
+            {
+              title: 'Главная',
+              href: 'index.html'
+            }, 
+            {
+              title: 'Каталог',
+              href: '#'
+            },           
+            {
+              title: 'Услуги',
+              href: 'about.html'
+            }, 
+            {
+              title: 'Производство',
+              href: '#'
+            },     
+            {
+              title: 'Новости',
+              href: '#'
+            },
+            {
+              title: 'Поддержка',
+              href: '#'
+            },            
+            {
+              title: 'Технологии',
+              href: '#'
+            },    
+            {
+              title: 'Контакты',
+              href: 'contacts.html'
+            },         
+          ];
+        +makeList(mainMenu)
+        
 
 script(src='js/src.js')

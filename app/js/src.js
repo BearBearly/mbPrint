@@ -27,6 +27,11 @@ $('.search > button').on('click', function(){
   }
 });
 
+$('.categories > ul > li > a').on('click', function(){
+  $(this).toggleClass('in').next().slideToggle();
+  $('.categories > ul > li > a').not(this).removeClass('in').next().slideUp();
+});
+
 // var menu = document.querySelector('.header__menu');
 // var menuOpener = document.querySelector('.main-nav__opener');
 // menuOpener.on('click', function() {

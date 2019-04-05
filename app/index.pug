@@ -7,25 +7,152 @@ html(lang="uk")
 
     .wrapper
       .row
-        .col.col-phablet-1-2.col-laptop-1-3.col-desktop-1-4
+        .col.col-laptop-1-3.col-desktop-1-4
           .categories.m-b-30
-            .placeholder
-              .title.title_main ПРОИЗВОДСТВО
+            .title.title_main ПРОИЗВОДСТВО
+            -
+              var sidebarList = [
+                {
+                  title: 'ЦИФРОВОЕ',
+                  sublist: [
+                    {
+                      title: 'lorem1',
+                    },
+                    {
+                      title: 'lorem2'
+                    },
+                    {
+                      title: 'lorem3'
+                    },
+                    {
+                      title: 'lorem4'
+                    },
+                    {
+                      title: 'lorem5'
+                    }
+                  ]
+                }, 
+                {
+                  title: 'ОФСЕТНОЕ',
+                  sublist: [
+                    {
+                      title: 'lorem1',
+                    },
+                    {
+                      title: 'lorem2'
+                    }
+                  ]
+                },
+                {
+                  title: 'ШЕЛКОГРАФИЯ',
+                  sublist: [
+                    {
+                      title: 'lorem1',
+                    },
+                    {
+                      title: 'lorem2'
+                    }
+                  ]
+                }, 
+                {
+                  title: `ПЕРЕМЕННЫЕ ДАННЫЕ, 
+                          ШТРИХ-КОДИРОВАНИЕ`,
+                  sublist: [
+                    {
+                      title: 'lorem1',
+                    },
+                    {
+                      title: 'lorem2'
+                    },                     
+                    {
+                      title: 'lorem3'
+                    },
+                    {
+                      title: 'lorem4'
+                    }
+                  ]
+                },  
+                {
+                  title: 'ОТДЕЛОЧНОЕ',
+                  sublist: [
+                    {
+                      title: 'lorem1',
+                    },
+                    {
+                      title: 'lorem2'
+                    },                     
+                    {
+                      title: 'lorem3'
+                    }
+                  ]
+                }                
+              ];
+            +makeSidebarList(sidebarList)
           .news.m-b-30
-            .placeholder
-              .title.title_main Новости
-        .col.col-phablet-1-2.col-laptop-2-3.col-desktop-3-4
+            .title.title_main Новости
+            -
+              var newsList = [
+                {
+                  dayMonth: '18.08.',
+                  year: '2014',
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates magnam, impedit, hic dolores atque aliquid libero facilis illum. Quibusdam, ipsam!'
+                },                   
+                {
+                  dayMonth: '18.08.',
+                  year: '2014',
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci repellendus ipsam cupiditate perspiciatis. Repudiandae asperiores voluptatem ducimus ab, iste earum aliquid eaque, veritatis, officia amet nihil. Provident natus voluptatum facere quas eos quia, perferendis nobis.'
+                },
+                {
+                  dayMonth: '18.08.',
+                  year: '2014',
+                  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum debitis laborum tempora recusandae nostrum aliquam, iste neque inventore optio.'
+                },             
+              ]
+            +makeNews(newsList)-;
+        .col.col-laptop-2-3.col-desktop-3-4
           .placeholder.m-b-30
           .row
-            each item in '123456'
-              .col.col-phablet-1-2.col-tablet-1-3
-                .placeholder.service.m-b-30
-                  .title.title_cinnabar
-            -;
+            -
+              var cards = [
+                'ЦИФРОВАЯ ПЕЧАТЬ',
+                'ОФСЕТНАЯ ПЕЧАТЬ',
+                'ФИНИШНАЯ ОБРАБОТКА',
+                'ДИЗАЙН, ВЕРСТКА, КОРРЕКТУРА, ПЕРЕВОД',
+                'КАТАЛОГ ВЫСТАВКИ',
+                'ПЕРЕМЕННЫЕ ДАННЫЕ, ШТРИХ-КОДИРОВАНИЕ'
+              ];
+            each item, index in cards
+              -var num = index+ 1
+              -var mod =index%3 == 0?'orange':(index-1)%3 == 0?'yellow':''
+            
+              .col.col-phablet-1-2.col-tablet-1-3.col-laptop-1-2.col-desktop-1-3
+                +card({
+                  title: item, 
+                  img: 'card'+num+'.png',
+                  mod: mod
+                })-;
+          .title.title_main.m-b-30 каталог
       .row
-        each item in '1234561234'
-          .col.col-desktop-1-4
-            .placeholder.m-b-30
-        -;
+        -
+          var products = [
+            'листовая продукция',
+            'Фотоальбомы',
+            'Буклеты',
+            'Брошюры',
+            'Визитки',
+            'Календари',
+            'Конверты',
+            'Папки',
+            'Наклейки, этикетки',
+            'Самокопиры'
+          ];
+        each item, index in products
+          -var num = index+1
+          .col.col-phablet-1-2.col-tablet-1-3.col-desktop-1-4
+            +product({
+              title: item, 
+              img: 'product'+num+'.png',
+            })
+          -;
         
     include includes/footer.pug

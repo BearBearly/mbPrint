@@ -17,24 +17,158 @@
   padding: 22px 22px 20px
   color: #fff
   text-transform: uppercase
+  +propToRem(font-size, 14)
   &.title_main
-    background: rgba(116, 3, 17, 1) 
+    background: rgba(116, 3, 17, 1)
+    padding: 14px 20px
+    +propToRem(font-size, 18)
   &.title_cinnabar
     background: rgba(246, 72, 1, 1) 
   &.title_dark-tangerine
     background: rgba(255, 157, 15, 1)
   &.title_brilliant-orange-yellow
     background: rgba(255, 192, 52, 1)
-  &.title_wet-asphalt
+  &.title_product
     background: rgba(84, 84, 84, .83)
-
+    padding: 17.5px 20px
+    +propToRem(line-height, 18)
+    
 .categories
-  +breakpoint(phablet)
-
+  >ul
+    font-size: 0
+    list-style-type: none
+    >li
+      a
+        font-size: 14px
+        line-height: 14px
+        display: block
+        text-transform: uppercase
+        color: #8c8c8c
+        padding: 20px 24px
+        position: relative
+      &>a
+        &::after
+          content: "\f107"
+          font-family: "FontAwesome"
+          position: absolute
+          right: 15px
+          transition: 0.3s
+        &.in
+          &::after
+            transform: rotate(180deg)
+      &:nth-child(odd)
+        background-color: #f8f8f8
+      &:nth-child(even)
+        background-color: #f4f3f3
+      &>ul
+        display: none
 
 .news
-  +breakpoint(phablet)
+  .news-post
+    padding: 25px 0
+    border-bottom: 1px solid $main-color
+    .date
+      margin-left: 2px
+      font-size: 18px
+      color: $main-color
+      span
+        color: #8c8c8c
+    .text
+      color: #434343
+      .button
+        margin-left: 5px
+        color: inherit
 
+.card
+  display: flex
+  flex-direction: column
+  height: 100%
+  padding-bottom: 30px
+  .card__img
+    text-align: center
+    position: relative
+    filter: grayscale(1)
+    transition: .3s ease filter
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      background: rgba(223,223,223, .6)
+      transition: .3s ease background
+    &:hover
+      &:after
+        background: rgba(223,223,223, 0)
+      filter: grayscale(0)
+  .card__title
+    flex: 1 auto
+    padding: 15px 23px
+    background: #ffc034
+    color: #fff
+    font-size: 14px
+    text-transform: uppercase
+  &_yellow
+    .card__title
+      background: #ff9d0f
+  &_orange
+    .card__title
+      background: #f64801
 
+.product
+  height: 100%
+  display: flex
+  flex-direction: column
+  position: relative
+  padding-bottom: 30px
+  .product__img
+    flex: 1 auto
+    display: flex
+    justify-content: center
+    background: #e2e2e2
+    img
+      align-self: center
+  .product__title
+    position: absolute
+    bottom: 30px
+    transition: .3s ease background
+  &:hover
+    .product__title
+      background: rgba(84, 84, 84, 1)
 
-
+.footer
+  background: $main-color
+  .partners
+    text-align: center
+  ul
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    flex-direction: column
+    list-style-type: none
+    li
+      text-align: center
+      display: inline-block
+      transition: .2s
+      a
+        +propToRem(font-size, 14)
+        color: #af5b5b
+        text-transform: uppercase
+      &:hover
+        border-color: #c6c6c6
+        a
+          color: #fff
+      &.active
+        background: rgba(241,241,241,1)
+        a
+          color: #740411
+    +breakpoint(tablet)
+        display: flex
+        flex-direction: row
+        padding: 0
+        li
+          padding: 0 5px
+    

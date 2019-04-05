@@ -27,12 +27,19 @@
     flex-direction: row
     align-items: flex-end
 
+.justify-between_for-footer
+  @extend .justify-between
+  +breakpoint(tablet)
+    align-items: center
+  +breakpoint(phablet)
+    align-items: center
+
 $v-step: 5
 @for $i from 1 through 6
   .m-b-#{$i*$v-step}
     margin-bottom: $i*$v-step*1px
 
-@each $extension in large desktop laptop tablet phablet
+@each $extension in phablet tablet laptop desktop large
   .col
     @for $i from 1 through 5
       +breakpoint($extension) 

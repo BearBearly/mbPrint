@@ -6,11 +6,173 @@ html(lang="uk")
     include includes/header.pug
     
     .wrapper
-      .row
-        .col.col-desktop-1-4
-          .placeholder.m-b-30
-          .placeholder.m-b-30
-        .col.col-desktop-3-4
-          .placeholder(style="height: 555px").m-b-30
-
+        .row
+          .col.col-laptop-1-3.col-desktop-1-4
+            .categories.m-b-30
+              .title.title_main ПРОИЗВОДСТВО
+              -
+                var sidebarList = [
+                  {
+                    title: 'ЦИФРОВОЕ',
+                    sublist: [
+                      {
+                        title: 'lorem1',
+                      },
+                      {
+                        title: 'lorem2'
+                      },
+                      {
+                        title: 'lorem3'
+                      },
+                      {
+                        title: 'lorem4'
+                      },
+                      {
+                        title: 'lorem5'
+                      }
+                    ]
+                  }, 
+                  {
+                    title: 'ОФСЕТНОЕ',
+                    sublist: [
+                      {
+                        title: 'lorem1',
+                      },
+                      {
+                        title: 'lorem2'
+                      }
+                    ]
+                  },
+                  {
+                    title: 'ШЕЛКОГРАФИЯ',
+                    sublist: [
+                      {
+                        title: 'lorem1',
+                      },
+                      {
+                        title: 'lorem2'
+                      }
+                    ]
+                  }, 
+                  {
+                    title: `ПЕРЕМЕННЫЕ ДАННЫЕ, 
+                            ШТРИХ-КОДИРОВАНИЕ`,
+                    sublist: [
+                      {
+                        title: 'lorem1',
+                      },
+                      {
+                        title: 'lorem2'
+                      },                     
+                      {
+                        title: 'lorem3'
+                      },
+                      {
+                        title: 'lorem4'
+                      }
+                    ]
+                  },  
+                  {
+                    title: 'ОТДЕЛОЧНОЕ',
+                    sublist: [
+                      {
+                        title: 'lorem1',
+                      },
+                      {
+                        title: 'lorem2'
+                      },                     
+                      {
+                        title: 'lorem3'
+                      }
+                    ]
+                  }                
+                ];
+              +makeSidebarList(sidebarList)
+            .news.m-b-30
+              .title.title_main Новости
+          .col.col-laptop-2-3.col-desktop-3-4
+            .breadcrumb.title
+              ul
+                li
+                  a(href='index.html') главная
+                li
+                  a.active(href='#') новости
+            .title_page.title.m-b-30 новости
+            .pagination.m-b-10
+              ul
+                li
+                  a(href='#').prev.not-available
+                    i.fas.fa-caret-left
+                li
+                  a.active(href='#') 1
+                li
+                  a(href='#') 2
+                li
+                  a(href='#') 3
+                li
+                  a(href='#') 4
+                li
+                  a(href='#') 5
+                li
+                  a(href='#') 6
+                li
+                  a(href='#') 7
+                li 
+                  span ...
+                li
+                  a(href='#') 199
+                li
+                  a(href='#') 200
+                li
+                  a(href='#').next
+                    i.fas.fa-caret-right
+            .news.m-b-25
+              -
+                var newsList = [
+                  {
+                    dayMonth: '18.08.',
+                    year: '2014',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates magnam, impedit, hic dolores atque aliquid libero facilis illum. Quibusdam, ipsam!'
+                  },                   
+                  {
+                    dayMonth: '18.08.',
+                    year: '2014',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci repellendus ipsam cupiditate perspiciatis. Repudiandae asperiores voluptatem ducimus ab, iste earum aliquid eaque, veritatis, officia amet nihil. Provident natus voluptatum facere quas eos quia, perferendis nobis.'
+                  },
+                  {
+                    dayMonth: '18.08.',
+                    year: '2014',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum debitis laborum tempora recusandae nostrum aliquam, iste neque inventore optio.'
+                  },             
+                ]
+              +makeNews(newsList)-;
+            .pagination.m-b-30
+              ul
+                li
+                  a(href='#').prev.not-available
+                    i.fas.fa-caret-left
+                li
+                  a.active(href='#') 1
+                li
+                  a(href='#') 2
+                li
+                  a(href='#') 3
+                li
+                  a(href='#') 4
+                li
+                  a(href='#') 5
+                li
+                  a(href='#') 6
+                li
+                  a(href='#') 7
+                li 
+                  span ...
+                li
+                  a(href='#') 199
+                li
+                  a(href='#') 200
+                li
+                  a(href='#').next
+                    i.fas.fa-caret-right
+           
     include includes/footer.pug

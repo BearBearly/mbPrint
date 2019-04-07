@@ -57,6 +57,16 @@ mixin makeNews(list)
           i.fas.fa-long-arrow-alt-right
 -;
 
+mixin makeNewsWithImage(list)
+  each item in list
+    .news-post
+      a(href="#").date=item.dayMonth
+        span=item.year
+      .text=item.text
+        a(href="#").button
+          i.fas.fa-long-arrow-alt-right
+-;
+
 mixin makeServices(list)
   each item in list
     .news-post

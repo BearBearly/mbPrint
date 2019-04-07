@@ -4,14 +4,132 @@ html(lang="uk")
     include includes/head.pug
   body
     include includes/header.pug
-
-    .wrapper
-      .row
-        .col.col-desktop-1-4
-          .placeholder.m-b-30
-          .placeholder.m-b-30
-        .col.col-desktop-3-4
-          .placeholder.m-b-30
-          .placeholder(style="height: 555px").m-b-30
+    .page.m-b-30
+      .wrapper
+        .row
+          .col.col-laptop-1-3.col-desktop-1-4
+            .categories.m-b-30
+              .title.title_main ПРОИЗВОДСТВО
+              -
+                var sidebarList = [
+                  {
+                    title: 'ЦИФРОВОЕ',
+                    sublist: [
+                      {
+                        title: 'lorem1',
+                      },
+                      {
+                        title: 'lorem2'
+                      },
+                      {
+                        title: 'lorem3'
+                      },
+                      {
+                        title: 'lorem4'
+                      },
+                      {
+                        title: 'lorem5'
+                      }
+                    ]
+                  }, 
+                  {
+                    title: 'ОФСЕТНОЕ',
+                    sublist: [
+                      {
+                        title: 'lorem1',
+                      },
+                      {
+                        title: 'lorem2'
+                      }
+                    ]
+                  },
+                  {
+                    title: 'ШЕЛКОГРАФИЯ',
+                    sublist: [
+                      {
+                        title: 'lorem1',
+                      },
+                      {
+                        title: 'lorem2'
+                      }
+                    ]
+                  }, 
+                  {
+                    title: `ПЕРЕМЕННЫЕ ДАННЫЕ, 
+                            ШТРИХ-КОДИРОВАНИЕ`,
+                    sublist: [
+                      {
+                        title: 'lorem1',
+                      },
+                      {
+                        title: 'lorem2'
+                      },                     
+                      {
+                        title: 'lorem3'
+                      },
+                      {
+                        title: 'lorem4'
+                      }
+                    ]
+                  },  
+                  {
+                    title: 'ОТДЕЛОЧНОЕ',
+                    sublist: [
+                      {
+                        title: 'lorem1',
+                      },
+                      {
+                        title: 'lorem2'
+                      },                     
+                      {
+                        title: 'lorem3'
+                      }
+                    ]
+                  }                
+                ];
+              +makeSidebarList(sidebarList)
+            .news.m-b-30
+              .title.title_main Новости
+              -
+                var newsList = [
+                  {
+                    dayMonth: '18.08.',
+                    year: '2014',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates magnam, impedit, hic dolores atque aliquid libero facilis illum. Quibusdam, ipsam!'
+                  },                   
+                  {
+                    dayMonth: '18.08.',
+                    year: '2014',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci repellendus ipsam cupiditate perspiciatis. Repudiandae asperiores voluptatem ducimus ab, iste earum aliquid eaque, veritatis, officia amet nihil. Provident natus voluptatum facere quas eos quia, perferendis nobis.'
+                  },
+                  {
+                    dayMonth: '18.08.',
+                    year: '2014',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum debitis laborum tempora recusandae nostrum aliquam, iste neque inventore optio.'
+                  },             
+                ]
+              +makeNews(newsList)-;
+          .col.col-laptop-2-3.col-desktop-3-4
+            .breadcrumb.title
+              ul
+                li
+                  a(href='index.html') главная
+                li
+                  a.active(href='#') контакты
+            .title_page.title.m-b-30 Контакты
+            .contacts.m-b-20 
+              .contacts__adress
+                |125252, ул.Зорге 15, метро Полежаевская, Октябрьское Поле.
+              .contacts__work-time
+                span Время работы:
+                | с 10:00 до 18:00 ежедневно, кроме Сб, Вс.
+              .contacts__phone
+                span Тел.:
+                a(href="tel:+7(499)9432094") +7 (499) 943-20-94,             
+              .contacts__mail
+                span e-mail:
+                a(href="mailto:mb@mbprint.ru") mb@mbprint.ru 
+            .map.m-b-30
+              iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.4374192968025!2d37.509439422592926!3d55.78564209510447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b549a6422208bb%3A0xa8e706e6325b0254!2z0YPQuy4g0JfQvtGA0LPQtSwgMTUsINCc0L7RgdC60LLQsCwg0KDQvtGB0ZbRjywgMTI1MjUy!5e0!3m2!1suk!2sua!4v1554541532537!5m2!1suk!2sua" width="100%" height="560" frameborder="0" style="border:0" allowfullscreen)
     
     include includes/footer.pug

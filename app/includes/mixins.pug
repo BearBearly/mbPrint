@@ -43,6 +43,7 @@ mixin makeSidebarList(arr)
     each item in arr
       li
         a(href="#")=item.title
+        i.fas.fa-chevron-down
         -if(item.sublist)
           +makelistMenu(item.sublist)
 -;

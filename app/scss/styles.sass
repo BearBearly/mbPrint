@@ -85,30 +85,36 @@
     font-size: 0
     list-style-type: none
     >li
+      padding:
+        top: 20px
+        bottom: 20px
+        right: 50px
+        left: 25px
+      position: relative
       a
-        font-size: 14px
+        +propToRem(font-size, 14)
         line-height: 14px
-        display: block
+        display: inline-block
         text-transform: uppercase
         color: #8c8c8c
-        padding: 20px 24px
-        position: relative
-      &>a
-        &::after
-          content: "\f107"
-          font-family: "FontAwesome"
-          position: absolute
-          right: 15px
-          transition: 0.3s
-        &.in
-          &::after
-            transform: rotate(180deg)
+      i
+        position: absolute
+        top: 25px
+        right: 25px
+        color: #8c8c8c
+        cursor: pointer
+        +propToRem(font-size, 14)
+        transition: .3s
+        &.active
+          transform: rotate(180deg)
       &:nth-child(odd)
         background-color: #f8f8f8
       &:nth-child(even)
         background-color: #f4f3f3
       &>ul
         display: none
+        li
+          padding: 10px 5px
 
 .news
   .news-post

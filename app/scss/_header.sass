@@ -4,6 +4,7 @@
     text-align: center
 
 .logo
+  font-size: 0
   img
     vertical-align: bottom
   .info
@@ -108,11 +109,11 @@
   .row
     background: rgba(229,229,229,1)
     ul
+      overflow: hidden
       position: absolute
       top: 62px
       left: 0
       right: 0
-      padding: 20px
       display: none
       flex-direction: column
       justify-content: center
@@ -147,7 +148,7 @@
           border-bottom: none
           border-left: 1px solid #c6c6c6
           a
-            padding: 18px 16px
+            padding: 18px
       +breakpoint(large)
         li
           a

@@ -1,5 +1,5 @@
 mixin makeList(list)
-  ul
+  ul.main-nav
     each item in list
       li
         a(href=item.href)=item.title
@@ -53,9 +53,8 @@ mixin makeNews(list)
     .news-post
       a(href="#").date=item.dayMonth
         span=item.year
-      .text=item.text
-        a(href="#").button
-          i.fas.fa-long-arrow-alt-right
+      a.text(href="#")=item.text
+        i.fas.fa-long-arrow-alt-right
 -;
 
 mixin makeNewsWithImage(list)

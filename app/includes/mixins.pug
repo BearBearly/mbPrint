@@ -5,6 +5,11 @@ mixin makeList(list)
         a(href=item.href)=item.title
           if item.sublevel
             +makeList(item)
+    .search
+      form
+        input(type="text" name="search" placeholder="Искать...")
+        button(type="submit")
+      button(type="text")
 -;
 
 mixin makePhoneList(contacts)

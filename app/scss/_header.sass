@@ -109,6 +109,7 @@
   .row
     background: rgba(229,229,229,1)
     ul
+      padding: 0 10px
       overflow: hidden
       position: absolute
       top: 62px
@@ -155,51 +156,51 @@
             padding: 19px 21px
 
 .search
-  width: 100%
-  height: 100%
-  position: absolute
-  top: 0
-  right: 0
-  transition: .3s
+  font-size: 0
+  padding: 20px 10px
   &.is-active
+    &>button
+      display: none
     form
       input
-        bottom: -61px
-        height: 100%
-    & > button
-      display: none
-
+        width: 100%
+        display: block
   form
-    display: flex
-    justify-content: flex-end
+    position: relative
     height: 100%
+    max-width: 650px
+    margin: 0 auto
     input
-      position: absolute
-      bottom: 0
-      right: 0
-      border: none
-      height: 0
-      width: 100%
-      padding: 0 $gutter
-      outline: none
-      +propToRem(font-size, 18)
-      color: #151515
       text-align: center
-      background: rgba(241,241,241,1)
-      z-index: 20
-      transition: all .3s
-      &::focus
-        background: rgba(241,241,241,1)
+      padding:
+        top: 0 
+        bottom: 0
+        right: 60px
+        left: 10px
+      outline: none
+      height: 50px
+      width: 100%
+      border: none
+      border-bottom: 1px solid #c2bbbc
+      text-transform: uppercase
+      color: #434343
+      +propToRem(font-size, 18)
+      transition: 1s ease display
+    &>button
+
   button
-    border: none
     position: absolute
     top: 0
     right: 0
-    width: 105px
-    height: 100%
+    width: 50px
+    height: 50px
+    background: #c6c6c6
+    border: none
     border-bottom: 1px solid #c2bbbc
-    outline: none
     cursor: pointer
+    outline: none
+    +breakpoint(desktop)
+      height: inherit
     &:before
       content: ''
       position: absolute
@@ -207,8 +208,25 @@
       bottom: 0
       left: 0
       right: 0
-      margin: auto
-      width: 28px
-      height: 29px
-      background: url('../img/search.png')
-  
+      margin: auto  
+      background: url('../img/search.png') no-repeat center
+  &>button
+    display: none
+  +breakpoint(desktop)
+    padding: 0
+    form
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      max-width: 100%
+      input
+        height: 100%
+        width: 0
+        right: -600px
+        display: none
+    button
+      width: 100px
+    &>button
+      display: block
+      height: 100%

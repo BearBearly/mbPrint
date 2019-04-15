@@ -1,4 +1,4 @@
-mixin makeList(list)
+mixin makeListWithSearch(list)
   ul.main-nav
     each item in list
       li
@@ -10,6 +10,15 @@ mixin makeList(list)
         input(type="text" name="search" placeholder="Искать...")
         button(type="submit")
       button(type="text")
+-;
+
+mixin makeList(list)
+  ul.main-nav
+    each item in list
+      li
+        a(href=item.href)=item.title
+          if item.sublevel
+            +makeList(item)
 -;
 
 mixin makePhoneList(contacts)
